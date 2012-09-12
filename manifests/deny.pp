@@ -14,7 +14,7 @@ define ufw::deny($proto='tcp', $port='all', $ip='', $from='any') {
     default => "$from/$proto",
   }
 
-  exec { "ufw-deny-${proto}-from-${from}-to-${ipadr}-port-${port}":
+  exec { "${name}-ufw-deny-${proto}-from-${from}-to-${ipadr}-port-${port}":
     command => $port ? {
       'all'   => "ufw deny proto $proto from $from to $ipadr",
       default => "ufw deny proto $proto from $from to $ipadr port $port",
