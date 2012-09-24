@@ -10,7 +10,7 @@ class ufw::masquerading {
 			owner   => root,
 			group   => 0,
 			mode    => 0444,
-			content => "net/ipv4/ip_forward=1\nnet/ipv6/conf/default/forwarding=1\nnet/ipv6/conf/all/forwarding=1\n"
+			content => "net/ipv4/ip_forward=1\nnet/ipv6/conf/default/forwarding=1\nnet/ipv6/conf/all/forwarding=1\n",
 			require => Class["ufw"],
 		;
 	}
